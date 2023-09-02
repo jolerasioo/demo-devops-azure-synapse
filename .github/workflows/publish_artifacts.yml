@@ -13,14 +13,14 @@ jobs:
         - uses: azure/synapse-workspace-deployment@release-1.0
           with:
             TargetWorkspaceName: 'synapse-met-cicd-uat'
-            TemplateFile: './path of the TemplateForWorkspace.json'
-            ParametersFile: './path of the TemplateParametersForWorkspace.json'
-            OverrideArmParameters: './path of the parameters.yaml'
+            TemplateFile: './synapse-met-cicd-dev/TemplateForWorkspace.json'
+            ParametersFile: './synapse-met-cicd-dev/TemplateParametersForWorkspace.json'
+            OverrideArmParameters: './synapse-met-cicd-dev/parameters.yaml'
             environment: 'Azure Public'
-            resourceGroup: 'target workspace resource group'
+            resourceGroup: 'aaaaaatest'
             clientId: ${{secrets.CLIENTID}}
             clientSecret:  ${{secrets.CLIENTSECRET}}
-            subscriptionId: 'subscriptionId of the target workspace'
-            tenantId: 'tenantId'
+            subscriptionId: ${{secrets.SUBSCIPTIONID}}
+            tenantId: ${{secrets.TENANTID}}
             DeleteArtifactsNotInTemplate: 'true'
             managedIdentity: 'False'
