@@ -2,7 +2,7 @@ name: workspace deployment
 
 on:
     push:
-        branches: [ publish_branch ]
+        branches: [ workspace_publish ]
 jobs:
     release:
         # You also can use the self-hosted runners.
