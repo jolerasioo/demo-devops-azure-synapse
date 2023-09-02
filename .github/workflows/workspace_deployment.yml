@@ -11,7 +11,7 @@ jobs:
         # Checks out your repository under $GITHUB_WORKSPACE, so your job can access it.
         - uses: actions/checkout@v2
         - 
-          uses: Azure/Synapse-workspace-deployment@v1.8.0
+          uses: Azure/Synapse-workspace-deployment@V1.7.0
           with:
             TargetWorkspaceName: 'synapse-met-cicd-uat'
             TemplateFile: './synapse-met-cicd-dev/TemplateForWorkspace.json'
