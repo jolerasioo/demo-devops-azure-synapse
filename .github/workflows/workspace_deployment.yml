@@ -3,6 +3,8 @@ name: workspace deployment
 on:
     push:
         branches: [ workspace_publish ]
+    workflow_dispatch:
+    
 jobs:
     release:
         # You also can use the self-hosted runners.
