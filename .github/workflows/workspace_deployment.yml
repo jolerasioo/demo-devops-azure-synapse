@@ -11,12 +11,11 @@ jobs:
         # Checks out your repository under $GITHUB_WORKSPACE, so your job can access it.
         - uses: actions/checkout@v2
         - 
-          uses: azure/synapse-workspace-deployment@release-1.0
+          uses: azure/synapse-workspace-deployment@v1.8.0
           with:
             TargetWorkspaceName: 'synapse-met-cicd-uat'
             TemplateFile: './synapse-met-cicd-dev/TemplateForWorkspace.json'
             ParametersFile: './synapse-met-cicd-dev/TemplateParametersForWorkspace.json'
-            OverrideArmParameters: './synapse-met-cicd-dev/parameters.yaml'
             environment: 'Azure Public'
             resourceGroup: 'aaaaaatest'
             clientId: ${{secrets.CLIENTID}}
@@ -24,4 +23,4 @@ jobs:
             subscriptionId: ${{secrets.SUBSCIPTIONID}}
             tenantId: ${{secrets.TENANTID}}
             DeleteArtifactsNotInTemplate: 'false'
-            managedIdentity: 'False'
+        
