@@ -11,8 +11,13 @@ jobs:
         runs-on: windows-latest
         steps:
         # Checks out your repository under $GITHUB_WORKSPACE, so your job can access it.
-        - uses: actions/checkout@v2
-        - 
+        - name: Check out repo
+          uses: actions/checkout@v2
+          with: 
+            ref: workspace_publish
+
+        
+        - name: Deploy Synapse workspace
           uses: azure/synapse-workspace-deployment@release-1.0
           with:
             TargetWorkspaceName: 'synapse-met-cicd-uat'
