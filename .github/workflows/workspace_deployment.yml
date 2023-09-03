@@ -16,7 +16,18 @@ jobs:
           with: 
             ref: workspace_publish
 
-        
+        - name: Azure Login
+          uses: Azure/login@v1.4.6
+          with:
+            # Paste output of `az ad sp create-for-rbac` as value of secret variable: AZURE_CREDENTIALS
+            #creds: # optional
+            # ClientId of the Azure Service principal created.
+            client-id: ${{secrets.CLIENTID}}
+            # TenantId of the Azure Service principal created.
+            tenant-id:  ${{secrets.TENANTID}}
+            # Azure subscriptionId
+            subscription-id: ${{secrets.SUBSCRIPTIONID}}
+         
         - name: Deploy Synapse workspace
           uses: Azure/Synapse-workspace-deployment@V1.7.0
           with:
